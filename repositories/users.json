@@ -8,5 +8,10 @@
     "email": "catmom@gmail",
     "password": "ilovecats",
     "id": "0b0fc785"
+  },
+  {
+    "email": "turtlemom@gmail",
+    "id": "e72f6a67",
+    "password": "iloveturtles"
   }
 ]

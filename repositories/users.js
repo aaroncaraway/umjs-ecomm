@@ -46,10 +46,38 @@ class UsersRepository {
     await this.writeAll(updatedRecords);
   }
 
+  async update(id, attrs) {
+    const records = await this.getAll();
+    const record = records.find((record) => record.id == id);
+
+    if (!record) {
+      throw new Error(`Record with ${id} not found`);
+    }
+
+    Object.assign(record, attrs);
+    await this.writeAll(records);
+  }
+
+  async getOneBy(filters) {
+    const records = await this.getAll();
+    for (let record of records) {
+      let found = true;
+      for (let key in filters) {
+        if (record[key] !== filters[key]) {
+          found = false;
+        }
+      }
+      if (found) {
+        return record;
+      }
+    }
+  }
   randomId() {
     return crypto.randomBytes(4).toString("hex");
   }
 }
+
+// module.exports = UsersRepository;
 
 const test = async () => {
   const repo = new UsersRepository("users.json");
@@ -63,7 +91,15 @@ const test = async () => {
   //   console.log(user);
 
   //  TESTING DELETE
-  await repo.delete("2675571a");
+  //   await repo.delete("2675571a");
+
+  // TESTING UPDATE
+  //   await repo.create({ email: "turtlemom@gmail" });
+  //   await repo.update("e72f6a67", { password: "iloveturtles" });
+  //  TESTING GETONEBY
+
+  const user = await repo.getOneBy({ email: "turtlemom@gmail" });
+  console.log(user);
 };
 
 test();
