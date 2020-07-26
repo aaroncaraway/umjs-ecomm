@@ -1,38 +1,12 @@
 [
   {
-    "email": "cat@gmail",
-    "password": "fishy"
-  },
-  {
-    "email": "cat@gmail",
-    "password": "fishy"
-  },
-  {
-    "email": "cat@gmail",
-    "password": "fishy"
-  },
-  {
-    "email": "cat@gmail",
-    "password": "fishy"
-  },
-  {
-    "email": "cat@gmail",
-    "password": "fishy"
-  },
-  {
-    "email": "cat@gmail",
-    "password": "fishy"
+    "email": "catmom@gmail",
+    "password": "ilovecats",
+    "id": "64f6ce78"
   },
   {
     "email": "catmom@gmail",
-    "password": "ilovecats"
-  },
-  {
-    "email": "catmom@gmail",
-    "password": "ilovecats"
-  },
-  {
-    "email": "catmom@gmail",
-    "password": "ilovecats"
+    "password": "ilovecats",
+    "id": "0b0fc785"
   }
 ]
