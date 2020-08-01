@@ -63,7 +63,12 @@ app.post("/signin", async (req, res) => {
     return res.send("Hmmm... We don't have that email in our system.");
   }
 
-  if (returningUser.password !== password) {
+  const validPassword = await usersRepo.comparePasswords(
+    returningUser.password,
+    password
+  );
+
+  if (!validPassword) {
     console.log(returningUser.password, password);
     return res.send("Password incorrect");
   }
