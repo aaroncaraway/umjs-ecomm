@@ -21,11 +21,16 @@ class UsersRepository {
     );
   }
 
+  randomId() {
+    return crypto.randomBytes(4).toString("hex");
+  }
+
   async create(attrs) {
     attrs.id = this.randomId();
     const records = await this.getAll();
     records.push(attrs);
-    this.writeAll(records);
+    await this.writeAll(records);
+    return attrs;
   }
 
   async writeAll(records) {
@@ -72,34 +77,6 @@ class UsersRepository {
       }
     }
   }
-  randomId() {
-    return crypto.randomBytes(4).toString("hex");
-  }
 }
 
-// module.exports = UsersRepository;
-
-const test = async () => {
-  const repo = new UsersRepository("users.json");
-  //   TESTING CREATE + GET ALL
-  //   await repo.create({ email: "catmom@gmail", password: "ilovecats" });
-  //   const users = await repo.getAll();
-  //   console.log(users);
-
-  //  TESTING GETONE
-  //   const user = await repo.getOne("fbdeba1c");
-  //   console.log(user);
-
-  //  TESTING DELETE
-  //   await repo.delete("2675571a");
-
-  // TESTING UPDATE
-  //   await repo.create({ email: "turtlemom@gmail" });
-  //   await repo.update("e72f6a67", { password: "iloveturtles" });
-  //  TESTING GETONEBY
-
-  const user = await repo.getOneBy({ email: "turtlemom@gmail" });
-  console.log(user);
-};
-
-test();
+module.exports = new UsersRepository("users.json");
