@@ -71,5 +71,15 @@
     "email": "uli@cat",
     "password": "plastic",
     "id": "f1e7eb65"
+  },
+  {
+    "email": "ang@cat",
+    "password": "d039928361ff69fef1f110a5efd333fd29e5b81b8d4fa923c4430004b7a63b3259aff7b9bf3ad7df52d877d4ac00518907c93f3ad2bd013c38bc92decee25972.50e2419251eb8833",
+    "id": "df647f47"
+  },
+  {
+    "email": "dwide@cat",
+    "password": "19f8d3722791efe547cbd9c2f6df20b1127cc0f2f738cb53584b4fb79fd2a55f7bc0d4a542b5b63203d71e085070e2db1404156e39a77f70c4a7bdc2fa56f2d0.8fb37342afa9468b",
+    "id": "3703e328"
   }
 ]
