@@ -86,5 +86,10 @@
     "email": "mike@cat",
     "password": "d11cdce15087d5b0ce95d35926febb13b9cd570a1714622273c864119753dbd03a5c379cc30345947b502bb0f1a602d7a9e00be1ca7b000f96d7a4ae9f7e2c20.03b68849dc3dbd28",
     "id": "e90caef8"
+  },
+  {
+    "email": "pip@cat",
+    "password": "35a1f65d9dd87bd10a68cf8e7ab9635bbb098784b683c674a78ec2347b500d09b5cb8b552d901cf59aecd0079bbd5218e0c3f43439c3c71a85ddb245c320da30.7defde6b02229cb3",
+    "id": "f7a66c97"
   }
 ]
