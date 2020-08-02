@@ -91,5 +91,15 @@
     "email": "pip@cat",
     "password": "35a1f65d9dd87bd10a68cf8e7ab9635bbb098784b683c674a78ec2347b500d09b5cb8b552d901cf59aecd0079bbd5218e0c3f43439c3c71a85ddb245c320da30.7defde6b02229cb3",
     "id": "f7a66c97"
+  },
+  {
+    "email": "jor@cat",
+    "password": "e9cbd383ca56aa1cf3f6ea7a16790b14676310e8fd2cb609200b1a7fa2b244b879e5184e44b265f8f1e670df56d08e7e7c9c6bcae4f206a96a970d45c67af06f.ae6c1b85c942f805",
+    "id": "4df14445"
+  },
+  {
+    "email": "morg@cat",
+    "password": "80c337dcc59755c9177baf49d322d6c425802bc8b720f81e48d0bda8418ee9470e1c51d571ac585163c1ff9287bf7f6db9230ed5db064946c09f50dab9ead686.2a606586280d7311",
+    "id": "bed2e75a"
   }
 ]
