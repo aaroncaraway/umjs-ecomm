@@ -42,26 +42,49 @@ router.get("/signin", (req, res) => {
   res.send(signinTemplate());
 });
 
-router.post("/signin", async (req, res) => {
-  const { email, password } = req.body;
-  const returningUser = await usersRepo.getOneBy({ email });
-  console.log("RETURNING USER", returningUser);
-  if (!returningUser) {
-    return res.send("Hmmm... We don't have that email in our system.");
+router.post(
+  "/signin",
+  [
+    check("email")
+      .trim()
+      .normalizeEmail()
+      .isEmail()
+      .withMessage("Must provide a valid email")
+      .custom(async (email) => {
+        const user = await usersRepo.getOneBy({ email });
+        if (!user) {
+          throw new Error("Email not found ");
+        }
+      }),
+    check("password")
+      .trim()
+      .custom(async (password, { req }) => {
+        const user = await usersRepo.getOneBy({ email: req.body.email });
+        if (!user) {
+          throw new Error("Password incorrecet");
+        }
+
+        const validPassword = await usersRepo.comparePasswords(
+          user.password,
+          password
+        );
+
+        if (!validPassword) {
+          throw new Error("Password incorrect");
+        }
+      }),
+  ],
+  async (req, res) => {
+    const { email, password } = req.body;
+    const returningUser = await usersRepo.getOneBy({ email });
+    console.log("RETURNING USER", returningUser);
+    if (!returningUser) {
+      return res.send("Hmmm... We don't have that email in our system.");
+    }
+
+    req.session.userId = returningUser.id;
+    res.send("LOGGED IN!");
   }
-
-  const validPassword = await usersRepo.comparePasswords(
-    returningUser.password,
-    password
-  );
-
-  if (!validPassword) {
-    console.log(returningUser.password, password);
-    return res.send("Password incorrect");
-  }
-
-  req.session.userId = returningUser.id;
-  res.send("LOGGED IN!");
-});
+);
 
 module.exports = router;
