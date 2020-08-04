@@ -7,6 +7,8 @@ const {
   requireEmail,
   requirePassword,
   requirePasswordConfirmation,
+  requireEmailExists,
+  requireValidPasswordForUser,
 } = require("../../routes/admin/validators");
 const router = express.Router();
 
@@ -39,42 +41,19 @@ router.get("/signout", (req, res) => {
 });
 
 router.get("/signin", (req, res) => {
-  res.send(signinTemplate());
+  res.send(signinTemplate({}));
 });
 
 router.post(
   "/signin",
-  [
-    check("email")
-      .trim()
-      .normalizeEmail()
-      .isEmail()
-      .withMessage("Must provide a valid email")
-      .custom(async (email) => {
-        const user = await usersRepo.getOneBy({ email });
-        if (!user) {
-          throw new Error("Email not found ");
-        }
-      }),
-    check("password")
-      .trim()
-      .custom(async (password, { req }) => {
-        const user = await usersRepo.getOneBy({ email: req.body.email });
-        if (!user) {
-          throw new Error("Password incorrecet");
-        }
-
-        const validPassword = await usersRepo.comparePasswords(
-          user.password,
-          password
-        );
-
-        if (!validPassword) {
-          throw new Error("Password incorrect");
-        }
-      }),
-  ],
+  [requireEmailExists, requireValidPasswordForUser],
   async (req, res) => {
+    const errors = validationResult(req);
+
+    if (!errors.isEmpty()) {
+      return res.send(signinTemplate({ req, errors }));
+    }
+
     const { email, password } = req.body;
     const returningUser = await usersRepo.getOneBy({ email });
     console.log("RETURNING USER", returningUser);
