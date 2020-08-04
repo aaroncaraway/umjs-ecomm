@@ -101,5 +101,20 @@
     "email": "morg@cat",
     "password": "80c337dcc59755c9177baf49d322d6c425802bc8b720f81e48d0bda8418ee9470e1c51d571ac585163c1ff9287bf7f6db9230ed5db064946c09f50dab9ead686.2a606586280d7311",
     "id": "bed2e75a"
+  },
+  {
+    "email": "youknowcpr@gmail.com",
+    "password": "3e2716ca8334d98820f818dc4b55f6d648f4a6c7180e1220d9578e0bfb2672a5ac284bb462b4a1263d6643c195e4a42a57c3e57146dd685ecd1957685ea8d1c8.e5452793e8ffc396",
+    "id": "b15f3977"
+  },
+  {
+    "email": "yellow@cat",
+    "password": "783f911cbfb624ac9bb589468dca1cb86ae52288d659cc11ad8e3365a8a1bafb0b88bbb145f9bc7c4466e63b903c741b656360f77cd01d005be9651d0b605d43.56ff709ddb133297",
+    "id": "f9e66c2e"
+  },
+  {
+    "email": "stan@cat",
+    "password": "46b15b8317e7967beaa9be8810ea6487090dec230f9f1e0910b2d5f7b239bde9423cbe5a155ec4ac7fdeeb762637aa4a46e9c2e4cd14d15a30a9fde96262bfda.65856e6f4cb642cd",
+    "id": "e58a2bc4"
   }
 ]

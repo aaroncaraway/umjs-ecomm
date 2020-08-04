@@ -1,28 +1,37 @@
 const express = require("express");
+const { check, validationResult } = require("express-validator");
 const usersRepo = require("../../repositories/users");
 const signupTemplate = require("../../views/admin/auth/signup");
 const signinTemplate = require("../../views/admin/auth/signin");
+const {
+  requireEmail,
+  requirePassword,
+  requirePasswordConfirmation,
+} = require("../../routes/admin/validators");
 const router = express.Router();
 
 router.get("/signup", (req, res) => {
   res.send(signupTemplate({ req }));
 });
 
-router.post("/signup", async (req, res) => {
-  const { email, password, passwordConfirmation } = req.body;
-  const existingUser = await usersRepo.getOneBy({ email });
-  if (existingUser) {
-    return res.send("Email already in use");
-  }
-  if (password !== passwordConfirmation) {
-    return res.send("Passwords do not match");
-  }
+router.post(
+  "/signup",
+  [requireEmail, requirePassword, requirePasswordConfirmation],
+  async (req, res) => {
+    const errors = validationResult(req);
 
-  const newUser = await usersRepo.create({ email, password });
-  req.session.userId = newUser.id;
+    if (!errors.isEmpty()) {
+      return res.send(signupTemplate({ req, errors }));
+    }
 
-  res.send(`ACCOUNT CREATED!! Your id is ${req.session.userId}`);
-});
+    const { email, password, passwordConfirmation } = req.body;
+    const newUser = await usersRepo.create({ email, password });
+
+    req.session.userId = newUser.id;
+
+    res.send(`ACCOUNT CREATED!! Your id is ${req.session.userId}`);
+  }
+);
 
 router.get("/signout", (req, res) => {
   req.session = null;
