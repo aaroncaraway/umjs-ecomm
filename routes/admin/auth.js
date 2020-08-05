@@ -25,7 +25,8 @@ router.post(
     const { email, password, passwordConfirmation } = req.body;
     const newUser = await usersRepo.create({ email, password });
     req.session.userId = newUser.id;
-    res.send(`ACCOUNT CREATED!! Your id is ${req.session.userId}`);
+    res.redirect("/admin/products");
+    // res.send(`ACCOUNT CREATED!! Your id is ${req.session.userId}`);
   }
 );
 
@@ -50,7 +51,8 @@ router.post(
       return res.send("Hmmm... We don't have that email in our system.");
     }
     req.session.userId = returningUser.id;
-    res.send("LOGGED IN!");
+    // res.send("LOGGED IN!");
+    res.redirect("/admin/products");
   }
 );
 

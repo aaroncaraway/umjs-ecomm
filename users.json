@@ -116,5 +116,50 @@
     "email": "stan@cat",
     "password": "46b15b8317e7967beaa9be8810ea6487090dec230f9f1e0910b2d5f7b239bde9423cbe5a155ec4ac7fdeeb762637aa4a46e9c2e4cd14d15a30a9fde96262bfda.65856e6f4cb642cd",
     "id": "e58a2bc4"
+  },
+  {
+    "email": "mike2@cat.com",
+    "password": "c0b76b5606f4e79c079924e16b88e96ab4eb17af2060fc4b9ffc7e8d36aaed6e551340ea643b15da63e2aea0fa02bbf97f2f62f150af4e4665e5cec0f0a74c9d.ee17b5bec9e3bfda",
+    "id": "d1e435e5"
+  },
+  {
+    "email": "mike2@cat.com",
+    "password": "c8449be3cab49eda596fca596a15f6e08884e8fa4601d64dd3d3f9d1140300f9752a7d747f5a206d3b1051278e229e987c2b640bf3945d83da5c254e2f0997c1.8bb8f46421c3ab06",
+    "id": "ca32f883"
+  },
+  {
+    "email": "mike2@cat.com",
+    "password": "1bb122a83868e71da5d0dab69b7135199dab234d8cc334502c403233795831c02890b1573b8f271396731847fd5074bef3dd46a245aaf0a9105137e9fe569e25.8e9db9213ca98c46",
+    "id": "fa782eae"
+  },
+  {
+    "email": "mike2@cat.com",
+    "password": "4f49ddea69a4a0163d2927cf263a624c4d5276951fc3dff050e9a7ad9d730b4af2dd1d318d391498381e41438c7578302a4252e1ee6023dce08ea494494c9112.6b467fdee38ad7ba",
+    "id": "8d89955d"
+  },
+  {
+    "email": "mike3@gmail.com",
+    "password": "6633b253584d4e850a84cffdb3d4bea27bb0378fe05edb788d7417f89d6b9e7f7588121dbdbd8319e2cdcfdf2a54aa01c6559864c14e67455d5e64632b8858cc.884f0086384e4ac5",
+    "id": "2e9a82bf"
+  },
+  {
+    "email": "mike10@cat.com",
+    "password": "3e7f78abfaaf949339aa6c4e3676ee680c490c71fbca6df76a49127997af93eb2a97048de9e5466044afab0e591fa035d47f50bbfd6a3844315d6533b2e2afd8.a70ef4d55cd0cdee",
+    "id": "e4953862"
+  },
+  {
+    "email": "mike11@cat.com",
+    "password": "08e4b2eb95a0b7c3b7c1406bc757c8ae35c83abcb1e207c5316ecf440ed1c5bb6a9846dc6036ed5f42ad252d56d170e785d8fae6852d93488dd6cebabbfb92af.043da9de4a01f674",
+    "id": "ce25e0b5"
+  },
+  {
+    "email": "stan@blacky.com",
+    "password": "1bd1360e905e4252d4d45ac9541c4cb0ff95906834700bf8ad0e8931a2fc712e6d96d770902fda6cc76e4bb564781d0938be7258780cf8e6bc422cab396f4203.bb4a997a77c5ab0b",
+    "id": "72f57043"
+  },
+  {
+    "email": "stan@k.com",
+    "password": "be33166296991384d637bea4966e8c7e0448a3fb2192530009bc9969f09a43fe676a96ae07a42060bdf75e6e81663790c6a282a5cdebe7eacd555b6bc0cab60d.3b585522b1962a75",
+    "id": "094b6401"
   }
 ]

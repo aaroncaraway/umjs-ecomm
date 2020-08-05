@@ -25,7 +25,6 @@ class UsersRepository extends Repository {
   async comparePasswords(saved, supplied) {
     const [savedHash, salt] = saved.split(".");
     const suppliedHash_asBuf = await scrypt(supplied, salt, 64);
-    console.log("HAAAY COLIN", suppliedHash_asBuf);
 
     return savedHash === suppliedHash_asBuf.toString("hex");
   }
