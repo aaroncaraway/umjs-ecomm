@@ -46,7 +46,7 @@ module.exports = class Repository {
 
   async getOne(id) {
     const records = await this.getAll();
-    return records.find((id) => id === id);
+    return records.find((record) => record.id === id);
   }
 
   async delete(id) {
