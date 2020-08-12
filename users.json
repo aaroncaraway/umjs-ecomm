@@ -161,5 +161,10 @@
     "email": "stan@k.com",
     "password": "be33166296991384d637bea4966e8c7e0448a3fb2192530009bc9969f09a43fe676a96ae07a42060bdf75e6e81663790c6a282a5cdebe7eacd555b6bc0cab60d.3b585522b1962a75",
     "id": "094b6401"
+  },
+  {
+    "email": "admin@cat.com",
+    "password": "087390c1b9cbc9be6689b10a57a16aaddf981cdc8af124306d1556107aa5ab366757d8b4b3c6c64b572bbc242f33bac8d32e45ed7a02c2bf2b99734462e3b8dd.8772cfe73cd91fcc",
+    "id": "47a276b0"
   }
 ]
